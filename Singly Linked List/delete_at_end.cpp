@@ -1,5 +1,5 @@
 void delete_at_end(){
-	node *ptr,*qtr,*temp;
+	node *qtr,*temp;
 	temp=start;
 	
 	if(start->next==NULL){
