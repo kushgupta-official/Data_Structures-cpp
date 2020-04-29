@@ -1,5 +1,6 @@
 # include <iostream>
 # include <stdlib.h>
+# include <process.h>
 using namespace std;
 # include "declaration.cpp"
 # include "length.cpp"
@@ -30,10 +31,15 @@ int main(void){
 		cout<<"\n9. Remove all Duplicate Elements";
 		cout<<"\n10. Search by Value";
 		cout<<"\n11. Search by Position";
+		cout<<"\n0. Exit";
 		cout<<"\n\nEnter your choice : ";
 		cin>>opt;
 		switch(opt)
 			{
+				case 0 :
+					{
+						exit(0);
+					}
 				case 1 :
 					{
 						display_ll();
@@ -89,6 +95,10 @@ int main(void){
 						search_by_position();
 						break;
 					}
+				default : 
+					{
+						cout<<"Wrong Choice Entered";
+					}
 			}
-	}while(opt!=0);
+	}while(1);
 }
