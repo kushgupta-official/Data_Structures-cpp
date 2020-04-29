@@ -5,7 +5,7 @@ void delete_at_position(){
 	cin>>pos;
 	int len=length();
 	if (pos>len){
-		cout<<"Wrong Position Entered, Position cannot exceed the size of Linked List\n Size of Linked List = "<<len;
+		cout<<"Wrong Position Entered, Position cannot exceed the size of Linked List\n Size of your Linked List = "<<len;
 		return;
 	}
 	else if(pos<1){

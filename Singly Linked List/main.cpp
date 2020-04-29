@@ -11,6 +11,10 @@ using namespace std;
 # include "delete_at_start.cpp"
 # include "delete_at_position.cpp"
 # include "reverse.cpp"
+# include "remove_duplicate.cpp"
+# include "search_by_value.cpp"
+# include "search_by_position.cpp"
+
 int main(void){
 	int opt;
 	do{
@@ -23,6 +27,9 @@ int main(void){
 		cout<<"\n6. Delete at Start";
 		cout<<"\n7. Delete at Position";
 		cout<<"\n8. Reverse";
+		cout<<"\n9. Remove all Duplicate Elements";
+		cout<<"\n10. Search by Value";
+		cout<<"\n11. Search by Position";
 		cout<<"\n\nEnter your choice : ";
 		cin>>opt;
 		switch(opt)
@@ -65,6 +72,21 @@ int main(void){
 				case 8 :
 					{
 						start=reverse();
+						break;
+					}
+				case 9 :
+					{
+						remove_duplicate();
+						break;
+					}
+				case 10 :
+					{
+						search_by_value();
+						break;
+					}
+				case 11 :
+					{
+						search_by_position();
 						break;
 					}
 			}
