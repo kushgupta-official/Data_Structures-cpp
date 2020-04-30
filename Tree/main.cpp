@@ -72,6 +72,28 @@ int max_depth(node *t){
 		}
 	}
 }
+int number_leaf_nodes(node *t){
+	if (t==NULL){
+		return 0;
+	}
+	if(t->left==NULL && t->right==NULL){
+		return 1;
+	}
+	else{
+		int count=number_leaf_nodes(t->left) + number_leaf_nodes(t->right);
+		return(count);
+	}
+}
+////Not working
+int number_internal_nodes(node *t){
+	if(t->left==NULL && t->right==NULL){
+		return -1;
+	}
+	else{
+		return(1+number_internal_nodes(t->left) + number_internal_nodes(t->right));
+	}
+}
+////Not Working
 int menu(){
 	int choice;
 	cout<<"\n\nMenu : ";
@@ -80,6 +102,7 @@ int menu(){
 	cout<<"\n3. Show Inorder";
 	cout<<"\n4. Show Postorder";
 	cout<<"\n5. Calculate Maximum Height/Depth of the Tree";
+	cout<<"\n6. Display Number of leaf nodes";
 	cout<<"\n\nEnter your Choice : ";
 	cin>>choice;
 	return choice;
@@ -112,9 +135,21 @@ int main(void){
 			case 5:
 				{
 					int depth=max_depth(root);
-					cout<<depth;	
+					cout<<depth;
+					break;	
 				}
-				
+			case 6:
+				{
+					int leaf_nodes=number_leaf_nodes(root);
+					cout<<"Leaf Node = "<<leaf_nodes;
+					break;
+				}
+		/*	case 7:
+				{
+					int internal_nodes=number_internal_nodes(root);
+					cout<<"Internal Nodes or Non Leaf Nodes = ";
+					break;
+				}*/
 		}
 	}while(1);
 }
