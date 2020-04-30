@@ -1,0 +1,32 @@
+tree:
+	btree
+		
+		inorder+c
+		postorder+c
+		preorder+c
+		height
+		depth
+		degree
+		no. of leaf node
+		no. of internal(non leaf node)
+		no of total nodes
+		no. of full nodes
+		check sbtree
+		check fbtree
+		
+	expression
+	
+	threaded btree
+	
+	bst
+
+	avl
+
+	b tree
+
+	
+		
+	
+
+
+	
