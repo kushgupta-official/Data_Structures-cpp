@@ -1,6 +1,15 @@
 # include <iostream>
 # include <stdlib.h>
 using namespace std;
+# include "declaration.cpp"
+# include "create_btree.cpp"
+# include "traversals.cpp"
+# include "max_depth.cpp"
+# include "number_leaf_nodes.cpp"
+# include "number_internal_nodes.cpp"
+# include "number_all_nodes.cpp"
+# include "number_full_nodes.cpp"
+
 
 struct node{
 	struct node *left;
@@ -9,12 +18,7 @@ struct node{
 };
 
 node *root=NULL;
-void check(){
-	if (root==NULL){
-		cout<<"Tree does not exist";
-		return;
-	}
-}
+
 node *create_btree(){
 	int x;
 	node *p;
@@ -38,6 +42,9 @@ void preorder(node *t){
 		preorder(t->left);
 		preorder(t->right);
 	}
+	else{
+		return;
+	}
 }
 
 void inorder(node *t){
@@ -46,6 +53,9 @@ void inorder(node *t){
 		cout<<t->data<<" ";
 		inorder(t->right);
 	}
+	else{
+		return;
+	}
 }
 
 void postorder(node *t){
@@ -53,6 +63,9 @@ void postorder(node *t){
 		postorder(t->left);
 		postorder(t->right);
 		cout<<t->data<<" ";
+	}
+	else{
+		return;
 	}
 }
 
@@ -84,16 +97,37 @@ int number_leaf_nodes(node *t){
 		return(count);
 	}
 }
-////Not working
+
 int number_internal_nodes(node *t){
+	if (t==NULL){
+		return 0;
+	}
 	if(t->left==NULL && t->right==NULL){
+		return 0;
+	}
+	else{
+		return(1+number_leaf_nodes(t->left) + number_leaf_nodes(t->right));
+	}
+}
+
+int number_all_nodes(node *t){
+	if(!t){
+		return 0;
+	}
+	else if(t){
+		return 1 + number_all_nodes(t->left) + number_all_nodes(t->right);
+	}
+}
+
+int number_full_nodes(node *t){
+	if(!t){
 		return -1;
 	}
 	else{
-		return(1+number_internal_nodes(t->left) + number_internal_nodes(t->right));
+		return 1 + number_full_nodes(t->left) + number_full_nodes(t->right);
 	}
 }
-////Not Working
+
 int menu(){
 	int choice;
 	cout<<"\n\nMenu : ";
@@ -102,11 +136,14 @@ int menu(){
 	cout<<"\n3. Show Inorder";
 	cout<<"\n4. Show Postorder";
 	cout<<"\n5. Calculate Maximum Height/Depth of the Tree";
-	cout<<"\n6. Display Number of leaf nodes";
+	cout<<"\n6. Display Number of Leaf nodes";
+	cout<<"\n7. Display Number of Internal nodes";
+	cout<<"\n8. Display Number of all nodes";
 	cout<<"\n\nEnter your Choice : ";
 	cin>>choice;
 	return choice;
 }
+
 int main(void){
 	int choice;
 	do{
@@ -144,12 +181,23 @@ int main(void){
 					cout<<"Leaf Node = "<<leaf_nodes;
 					break;
 				}
-		/*	case 7:
+			case 7:
 				{
 					int internal_nodes=number_internal_nodes(root);
-					cout<<"Internal Nodes or Non Leaf Nodes = ";
+					cout<<"Internal Nodes or Non Leaf Nodes = "<<internal_nodes;
 					break;
-				}*/
+				}
+			case 8:
+				{
+					int all_nodes=number_all_nodes(root);
+					cout<<"Number of all Nodes = "<<all_nodes;
+					break;
+				}
+			case 9:
+				{
+					cout<<"Number of full Nodes = "<<number_full_nodes(root);
+					break;
+				}
 		}
 	}while(1);
 }
