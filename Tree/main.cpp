@@ -1,3 +1,4 @@
+//strictly binary and full nodes not working
 # include <iostream>
 # include <stdlib.h>
 # include <process.h>
@@ -10,6 +11,7 @@ using namespace std;
 # include "number_internal_nodes.cpp"
 # include "number_all_nodes.cpp"
 # include "number_full_nodes.cpp"
+# include "check_strictly_binary.cpp"
 
 int menu(){
 	int choice;
@@ -22,6 +24,8 @@ int menu(){
 	cout<<"\n6. Display Number of Leaf nodes";
 	cout<<"\n7. Display Number of Internal nodes";
 	cout<<"\n8. Display Number of all nodes";
+	cout<<"\n9. Display Number of full nodes";
+	cout<<"\n10. Check Strictly Binary";
 	cout<<"\n0. Exit";
 	cout<<"\n\nEnter your Choice : ";
 	cin>>choice;
@@ -85,6 +89,15 @@ int main(void){
 				{
 					cout<<"Number of full Nodes = "<<number_full_nodes(root);
 					break;
+				}
+			case 10:
+				{
+					if (!check_strictly_binary){
+						cout<<"This Tree is not a strictly Binary Tree";
+					}
+					else{
+						cout<<"This Tree is a Strictly Binary Tree";
+					}
 				}
 			default:
 				{
