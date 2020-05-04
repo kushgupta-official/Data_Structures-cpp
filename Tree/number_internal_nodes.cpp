@@ -6,6 +6,6 @@ int number_internal_nodes(node *t){
 		return 0;
 	}
 	else{
-		return(1+number_leaf_nodes(t->left) + number_leaf_nodes(t->right));
+		return(1+number_internal_nodes(t->left) + number_internal_nodes(t->right));
 	}
 }

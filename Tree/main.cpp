@@ -87,7 +87,8 @@ int main(void){
 				}
 			case 9:
 				{
-					cout<<"Number of full Nodes = "<<number_full_nodes(root);
+					int x=number_full_nodes(root);
+					cout<<"Number of full Nodes = "<<x;
 					break;
 				}
 			case 10:
