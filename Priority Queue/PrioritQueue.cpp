@@ -14,35 +14,42 @@ class PriorityQueue{
 		}
 		size=0;
 	}
-	
+	int parent(int loc){
+		return (loc-1)/2;
+	}
+	int left_child(int loc){
+		return (2*loc)+1;
+	}
+	int right_child(int loc){
+		return (2*loc)+2;
+	}
 	void shiftup(int loc){
-		
-		while(loc>=0 && arr[loc]>arr[loc/2]){
-			swap(arr[loc],arr[loc/2]);
-			loc=loc/2;
+		while (loc>=0 && arr[loc]>arr[parent(loc)]){
+			swap(arr[loc],arr[parent(loc)]);
+			loc=parent(loc);
 		}
 	}
-
 	void shiftdown(int loc){
-
-		while(loc<size && (arr[loc]<arr[2*loc] || arr[2*loc+1])){
-			if (arr[2*loc]>arr[2*loc+1]){
-				swap(arr[loc],arr[2*loc]);
-				loc=2*loc;
-			}
-			else{
-				swap(arr[loc],arr[2*loc+1]);
-				loc=2*loc+1;
-			}
+//		this->display();
+		int maxIndex=loc;
+		int l=left_child(loc);
+		int r=right_child(loc);
+		if (l<size && arr[maxIndex]<arr[l]){
+			maxIndex=l;
+		}
+		if(r<size && arr[maxIndex]<arr[r]){
+			maxIndex=r;
+		}
+		if(loc!=maxIndex){
+			swap(arr[loc],arr[maxIndex]);			
+			shiftdown(maxIndex);
 		}
 	}
-
-	void insert(int x){
+	void insert(int i){
+		arr[size]=i;
+		shiftup(size);
 		this->size++;
-		arr[size-1]=x;
-		shiftup(size-1);
 	}
-
 	int extractMax(){
 		int res=arr[0];
 		arr[0]=arr[size-1];
@@ -52,14 +59,16 @@ class PriorityQueue{
 	}
 	void display(){
 		for (int i=0;i<size;i++){
-			cout<<arr[i]<<" ";
+			cout<<this->arr[i]<<" ";
 		}
+		cout<<endl;
 	}
 };
 
 int main(void){
 	PriorityQueue pq;
 	pq.insert(1);
+	cout<<pq.extractMax()<<endl;
 	pq.insert(2);
 	pq.insert(3);
 	cout<<pq.extractMax()<<endl;

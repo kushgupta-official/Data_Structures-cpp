@@ -12,22 +12,35 @@ public:
 		}
 		size=0;
 	}
+	int parent(int loc){
+		return (loc-1)/2;
+	}
+	int left_child(int loc){
+		return (2*loc)+1;
+	}
+	int right_child(int loc){
+		return (2*loc)+2;
+	}
 	void shiftup(int loc){
-		while (loc>=0 && arr[loc]>arr[loc/2]){
-			swap(arr[loc],arr[loc/2]);
-			loc=loc/2;
+		while (loc>=0 && arr[loc]>arr[parent(loc)]){
+			swap(arr[loc],arr[parent(loc)]);
+			loc=parent(loc);
 		}
 	}
 	void shiftdown(int loc){
-		while(loc<size && (arr[loc]<arr[loc*2] || arr[loc*2+1])){
-			if (arr[loc*2]>arr[loc*2+1]){
-				swap(arr[loc],arr[loc*2]);
-				loc=loc*2;
-			}
-			else{
-				swap(arr[loc],arr[loc*2+1]);
-				loc=loc*2+1;
-			}
+//		this->display();
+		int maxIndex=loc;
+		int l=left_child(loc);
+		int r=right_child(loc);
+		if (l<size && arr[maxIndex]<arr[l]){
+			maxIndex=l;
+		}
+		if(r<size && arr[maxIndex]<arr[r]){
+			maxIndex=r;
+		}
+		if(loc!=maxIndex){
+			swap(arr[loc],arr[maxIndex]);			
+			shiftdown(maxIndex);
 		}
 	}
 	void insert(int i){
@@ -42,6 +55,12 @@ public:
 		shiftdown(0);
 		return res;
 	}
+	void display(){
+		for (int i=0;i<size;i++){
+			cout<<this->arr[i]<<" ";
+		}
+		cout<<endl;
+	}
 };
 
 void heapify(int arr[],int n){
@@ -49,17 +68,18 @@ void heapify(int arr[],int n){
 	for (int i=0;i<n;i++){
 		h.insert(arr[i]);
 	}
-	cout<<endl;
+//	h.display();
 	for (int i=0;i<n;i++){
 		arr[i]=h.extractMax();
-		cout<<arr[i]<<" ";
+//		h.display();
 	}
-	cout<<endl;
+//	cout<<endl;
 	
 	return;
 }
 
 void display_array(int arr[],int n){
+	cout<<"Sorted Array : ";
 	for (int i=0;i<n;i++){
 		cout<<arr[i]<<" ";
 	}
@@ -68,7 +88,8 @@ void display_array(int arr[],int n){
 }
 
 int main(void){
-	int arr[]={1,2,3,4,5,6};
+	int arr[]={1,4,3,2,6,7,8,2,9,0}; 
+
 	int n=sizeof(arr)/sizeof(arr[0]);
 	heapify(arr,n);
 	cout<<endl;
