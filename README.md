@@ -1,4 +1,4 @@
-# Data_Structures-cpp
+# Data_Structures-cpp (To be updated for Priority Queue and Heap Sort)
 
 ## Singly Linked List :
 ### Functions : 
