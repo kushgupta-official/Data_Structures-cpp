@@ -2,6 +2,8 @@
 # include <iostream>
 # include <stdlib.h>
 # include <process.h>
+# include <stack>
+# include <vector>
 using namespace std;
 # include "declaration.cpp"
 # include "create_btree.cpp"
@@ -11,7 +13,7 @@ using namespace std;
 # include "number_internal_nodes.cpp"
 # include "number_all_nodes.cpp"
 # include "number_full_nodes.cpp"
-# include "check_strictly_binary.cpp"
+//# include "check_strictly_binary.cpp"
 
 int menu(){
 	int choice;
@@ -91,15 +93,15 @@ int main(void){
 					cout<<"Number of full Nodes = "<<x;
 					break;
 				}
-			case 10:
-				{
-					if (!check_strictly_binary){
-						cout<<"This Tree is not a strictly Binary Tree";
-					}
-					else{
-						cout<<"This Tree is a Strictly Binary Tree";
-					}
-				}
+			// case 10:
+			// 	{
+			// 		if (!check_strictly_binary){
+			// 			cout<<"This Tree is not a strictly Binary Tree";
+			// 		}
+			// 		else{
+			// 			cout<<"This Tree is a Strictly Binary Tree";
+			// 		}
+			// 	}
 			default:
 				{
 					cout<<"Please Enter the Correct Choice";
