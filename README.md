@@ -14,7 +14,7 @@
 10. Search by Value
 11. Search by Position
 
-## Binary Tree : 
+## Binary Tree : (Cureently being Updated)
 ### Functions : 
 1. Create a Binary Tree
 2. Show Preorder
@@ -25,3 +25,12 @@
 7. Display Number of Internal nodes
 8. Display Number of all nodes
 9. Display Number of full nodes
+
+## Heap Sort :
+### Types :
+1. Inplace Heap Sort
+2. Not Inplace Heap Sort
+
+## Infix to Postfix
+
+## Priority Queue
