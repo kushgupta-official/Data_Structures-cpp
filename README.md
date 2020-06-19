@@ -14,7 +14,7 @@
 10. Search by Value
 11. Search by Position
 
-## Binary Tree : (Cureently being Updated)
+## Binary Tree : (Currently being Updated)
 ### Functions : 
 1. Create a Binary Tree
 2. Show Preorder
