@@ -1,6 +1,6 @@
 # Data_Structures-cpp (To be updated)
 
-## Singly Linked List :
+## [Singly Linked List]https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Singly%20Linked%20List :
 ### Functions : 
 1. Display Linked List
 2. Append Node
