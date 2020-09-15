@@ -41,6 +41,9 @@ void insert(int value){
 				break;
 			}
 		}
+		else{
+			return;
+		}
 	}
 }
 
