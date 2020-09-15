@@ -43,7 +43,7 @@ void insert(int value){
 				break;
 			}
 		}
-		else if (value<trav->data){
+		else if (value < trav->data){
 			if (trav->left!=NULL)
 				trav=trav->left;
 			else{
@@ -66,13 +66,9 @@ void inorder(tree *node){
 }
 
 void search(int value){
-	cout<<"Visiting Elements : ";
+	cout<<"\nVisiting Elements : ";
 	tree *trav=root;
-	while(trav){
-		if (trav==NULL){
-			cout<<"\nElement not Found\n";
-			return;
-		}
+	while(1){
 		cout<<trav->data<<" ";
 		if (trav->data==value){
 			return;
@@ -80,22 +76,23 @@ void search(int value){
 		else if (value > trav->data){
 			trav=trav->right;
 		}
-		else{
+		else if (value < trav->data){
 			trav=trav->left;
 		}
+		if (trav==NULL){
+			cout<<"\nElement not Found\n";
+			return;
+		}
 	}
-	cout<<"\nElement not Found\n";
-	return;
 }
 
 int main()
 {
 	int arr[]={4,2,5,6,3,1,8,7};
-	//root=new tree(arr[0]);
 	for (int i=0;i<sizeof(arr)/sizeof(int);i++){
 		insert(arr[i]);
 	}
 	inorder(root);
-	search(10);// not working for not present element
+	search(9);
 	return 0;
 }
