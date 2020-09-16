@@ -14,9 +14,9 @@
 10. Search by Value
 11. Search by Position
 
-## [Tree]
-## Binary Tree : (Currently being Updated)
-### Functions : 
+## [Tree](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Tree)
+### Binary Tree :
+#### Functions : 
 1. Create a Binary Tree
 2. Show Preorder
 3. Show Inorder
