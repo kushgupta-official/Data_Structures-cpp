@@ -1,6 +1,6 @@
 # Data Structures in C++ (To be updated)
 
-##[Graphs](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Graphs)
+## [Graphs](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Graphs)
 1. Breadth First Search
 2. Dijkstra’s shortest path algorithm
 3. Check Reachibility in a Graph
@@ -24,13 +24,13 @@
 1. Inplace Heap Sort
 2. Not Inplace Heap Sort
 
-## Infix to Postfix(https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Inifx%20to%20Postfix)
+## [Infix to Postfix](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Inifx%20to%20Postfix)
 
-## Merge Sort(https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Merge%20Sort)
+## [Merge Sort](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Merge%20Sort)
 
-## Priority Queue(https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Priority%20Queue)
+## [Priority Queue](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Priority%20Queue)
 
-## Quick Sort(https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Quick%20Sort)
+## [Quick Sort](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Quick%20Sort)
 
 ## [Tree](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Tree)
 ### Binary Tree :
