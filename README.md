@@ -1,4 +1,4 @@
-# Data_Structures-cpp (To be updated)
+# Data Structures in C++ (To be updated)
 
 ## [Singly Linked List](https://github.com/kushgupta-official/Data_Structures-cpp/tree/master/Singly%20Linked%20List) :
 ### Functions : 
@@ -14,6 +14,7 @@
 10. Search by Value
 11. Search by Position
 
+## [Tree]
 ## Binary Tree : (Currently being Updated)
 ### Functions : 
 1. Create a Binary Tree
